@@ -189,6 +189,16 @@ document.getElementById('fishForm').addEventListener('submit', async (e) => {
       itemContainer.style.padding = '15px';
       itemContainer.style.boxSizing = 'border-box';
 
+        const itemText = document.createElement('div');
+  itemText.textContent = trimmedItem;
+  itemText.style.fontWeight = '600';
+  itemText.style.color = '#004d40';
+  itemText.style.flexGrow = '1';
+  itemText.style.marginBottom = '10px';
+
+  itemContainer.appendChild(itemText);
+
+      
       // Image from Unsplash API
      
 
