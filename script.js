@@ -47,7 +47,7 @@ function showLoading() {
 }
 
 function hideLoading() {
-  loadingOverlay.classList.remove('active');
+  loadingOverlay.classList.remove('active'); //wdawd
   stopLoadingDots();
 }
 
