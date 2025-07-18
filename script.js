@@ -190,22 +190,7 @@ document.getElementById('fishForm').addEventListener('submit', async (e) => {
       itemContainer.style.boxSizing = 'border-box';
 
       // Image from Unsplash API
-      const img = document.createElement('img');
-      img.alt = trimmedItem;
-      img.style.width = '100%';
-      img.style.height = '150px';
-      img.style.objectFit = 'cover';
-      img.style.borderRadius = '6px';
-      img.style.marginBottom = '10px';
-
-      img.src = await fetchUnsplashImage(trimmedItem);
-
-      // Item text
-      const itemText = document.createElement('div');
-      itemText.textContent = trimmedItem;
-      itemText.style.fontWeight = '600';
-      itemText.style.color = '#004d40';
-      itemText.style.flexGrow = '1';
+     
 
       // Amazon button
       const button = document.createElement('button');
