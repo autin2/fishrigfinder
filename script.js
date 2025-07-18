@@ -208,7 +208,6 @@ document.getElementById('fishForm').addEventListener('submit', async (e) => {
         window.open(amazonUrl, '_blank');
       });
 
-      itemContainer.appendChild(img);
       itemContainer.appendChild(itemText);
       itemContainer.appendChild(button);
 
