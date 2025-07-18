@@ -159,7 +159,11 @@ document.getElementById('fishForm').addEventListener('submit', async (e) => {
     if (oldContainer) oldContainer.remove();
 
     // Parse recommendations from API response message text
-    const items = data.recommendations || [];
+   const items = data.recommendations
+  .filter(line => !line.toLowerCase().startsWith('recommendations:') && !line.toLowerCase().startsWith('tip:'))
+  .map(line => line.trim())
+  .filter(line => line !== '');
+
 
     // Create a parent container for horizontal layout
     const parentContainer = document.createElement('div');
