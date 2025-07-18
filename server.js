@@ -21,25 +21,22 @@ app.post('/api/recommendations', async (req, res) => {
     return res.status(400).json({ message: 'Missing required fields.' });
   }
 
-  const prompt = `
+const prompt = `
 You are an expert fishing guide.
 Given the following information:
 - Water type: ${waterType}
 - Fishing pole: ${poleType}
 - Target fish: ${fishType}
 
-1) Suggest the best lures, rigs, bait, weight, and pound line for successful fishing.
-2) Provide a concise fishing tip or fact about catching the fish, including how to use the lure, best conditions, or times.
+Suggest the best lures, rigs, bait, weight, and pound line for successful fishing.
 
 Format your response as:
 Recommendations:
 - item 1
 - item 2
 ...
-
-Tip:
-Your tip here
 `;
+
 
 
   try {
