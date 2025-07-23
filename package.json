@@ -1,0 +1,13 @@
+{
+  "name": "fishing-gear-selector",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "openai": "^5.10.1"
+  }
+}
