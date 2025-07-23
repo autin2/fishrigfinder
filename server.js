@@ -8,23 +8,24 @@ const app = express();
 // Middleware
 app.use(express.json());
 
-// Serve static frontend files from /public
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve static files from the root folder (no 'public' folder)
+app.use(express.static(path.join(__dirname)));
 
-// Initialize OpenAI with env variable
+// Initialize OpenAI with env variable (make sure OPENAI_API_KEY is set in Render dashboard)
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-// Serve main pages (if you want direct routes; else index.html in public suffices)
+// Serve main pages
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-app.get('/fish.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'fish.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// AI suggestions API route
+app.get('/fish.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'fish.html'));
+});
+
+// API route to get AI suggestions
 app.post('/api/suggestions', async (req, res) => {
   try {
     console.log('Received body:', req.body);
@@ -79,6 +80,7 @@ Example:
     let responseText = completion.choices[0]?.message?.content || '';
     console.log('Raw AI response:', responseText);
 
+    // Clean response
     responseText = responseText.replace(/```json|```|'''/g, '').trim();
     responseText = responseText.replace(/"(\w+):/g, '"$1":');
 
