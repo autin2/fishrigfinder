@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const OpenAI = require('openai');
@@ -6,22 +7,24 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(express.static(path.join(__dirname)));
 
+// Serve static frontend files from /public
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Initialize OpenAI with env variable
 const openai = new OpenAI({
-  apiKey: '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',
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
-// Serve main pages
+// Serve main pages (if you want direct routes; else index.html in public suffices)
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-
 app.get('/fish.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'fish.html'));
+  res.sendFile(path.join(__dirname, 'public', 'fish.html'));
 });
 
-// API route to get AI suggestions
+// AI suggestions API route
 app.post('/api/suggestions', async (req, res) => {
   try {
     console.log('Received body:', req.body);
@@ -33,9 +36,9 @@ app.post('/api/suggestions', async (req, res) => {
     }
 
     const messages = [
-  {
-    role: "system",
-    content: `
+      {
+        role: "system",
+        content: `
 You are a fishing gear expert helping someone catch a specific fish based on their equipment and location.
 
 Only recommend gear if it's actually useful for the target fish. If a category is not important for this catch (e.g., rod holder for flounder), return null for that category.
@@ -59,15 +62,12 @@ Example:
   "Lure": ["Soft plastic jerkbait, 3 inch"]
 }
 `
-
-
-  },
-  {
-    role: "user",
-    content: `Fish: ${targetFish}\nWater type: ${waterType}\nRod: ${rodType}\nLine strength: ${lineStrength}\nLocation: ${state}`
-  }
-];
-
+      },
+      {
+        role: "user",
+        content: `Fish: ${targetFish}\nWater type: ${waterType}\nRod: ${rodType}\nLine strength: ${lineStrength}\nLocation: ${state}`
+      }
+    ];
 
     const completion = await openai.chat.completions.create({
       model: "gpt-4o",
@@ -79,13 +79,9 @@ Example:
     let responseText = completion.choices[0]?.message?.content || '';
     console.log('Raw AI response:', responseText);
 
-    // Clean response: remove triple backticks and quotes
     responseText = responseText.replace(/```json|```|'''/g, '').trim();
-
-    // Fix keys missing closing quotes (common AI formatting bug)
     responseText = responseText.replace(/"(\w+):/g, '"$1":');
 
-    // Extract JSON substring from first to last brace
     const firstBrace = responseText.indexOf('{');
     const lastBrace = responseText.lastIndexOf('}');
     if (firstBrace === -1 || lastBrace === -1 || lastBrace <= firstBrace) {
@@ -102,15 +98,14 @@ Example:
       return res.status(500).json({ error: 'AI response was not valid JSON.' });
     }
 
-    res.json({ suggestions: aiResponse });
-	
-	// Normalize all fields to arrays or null:
-for (const key in aiResponse) {
-  if (aiResponse[key] && !Array.isArray(aiResponse[key])) {
-    aiResponse[key] = [aiResponse[key]];
-  }
-}
+    // Normalize all fields to arrays or null:
+    for (const key in aiResponse) {
+      if (aiResponse[key] && !Array.isArray(aiResponse[key])) {
+        aiResponse[key] = [aiResponse[key]];
+      }
+    }
 
+    res.json({ suggestions: aiResponse });
   } catch (error) {
     console.error('OpenAI error:', error);
     res.status(500).json({ error: 'Failed to get suggestions from AI' });
