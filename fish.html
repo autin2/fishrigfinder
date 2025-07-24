@@ -6,159 +6,109 @@
   <title>Fish Target</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-   body {
-     margin: 0;
-     font-family: 'Segoe UI', sans-serif;
-     background-color: white;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     height: 100vh;
-     padding-top: 70px; /* to prevent topbar overlap */
-     position: relative;
-     overflow-x: hidden;
-     flex-direction: column; /* stack content vertically */
-   }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: white;
+      padding-top: 70px; /* for fixed topbar */
+      position: relative;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-   .container {
-     background: #fff;
-     padding: 30px;
-     border-radius: 12px;
-     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-     width: 90%;
-     max-width: 400px;
-     position: relative;
-     z-index: 1;
-     margin-bottom: 20px;
-   }
+    .topbar {
+      width: 100%;
+      background-color: #2b6cb0;
+      padding: 15px 0;
+      text-align: center;
+      color: white;
+      font-size: 1.7rem;
+      font-weight: 600;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
 
-   h1 {
-     margin-bottom: 20px;
-     text-align: center;
-     color: #2b6cb0;
-   }
+    /* Header above the gear items */
+    .results-header {
+      color: #2b6cb0;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 30px 0 20px;
+      text-align: center;
+      max-width: 600px;
+    }
 
-   label {
-     display: block;
-     margin-top: 15px;
-     font-weight: bold;
-   }
+    /* Wrapper that holds all categories */
+    .results-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      width: 90%;
+      max-width: 800px;
+    }
 
-   select,
-   input {
-     width: 100%;
-     padding: 10px;
-     margin-top: 5px;
-     border: 1px solid #ccc;
-     border-radius: 6px;
-   }
+    /* Each gear category block */
+    .gear-category {
+      background: #f1faff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
 
-   button {
-     margin-top: 20px;
-     width: 100%;
-     background-color: #2b6cb0;
-     color: white;
-     border: none;
-     padding: 12px;
-     border-radius: 6px;
-     cursor: pointer;
-     font-weight: bold;
-   }
+    .gear-category h2 {
+      margin-bottom: 15px;
+      color: #2b6cb0;
+      font-size: 1.3rem;
+      text-align: left;
+    }
 
-   button:hover {
-     background-color: #1e4f80;
-   }
+    /* Grid container for gear items inside each category */
+    .gear-items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 15px 20px;
+    }
 
-   .gear-category {
-     margin: 20px 0;
-     padding: 20px;
-     background: #f1faff;
-     border-radius: 10px;
-     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-   }
+    .gear-item {
+      background: #fff;
+      padding: 12px 16px;
+      border-left: 4px solid #2b6cb0;
+      border-radius: 6px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
 
-   .gear-category h2 {
-     margin-bottom: 10px;
-     color: #2b6cb0;
-   }
+    .buy-button {
+      padding: 6px 12px;
+      font-weight: 600;
+      border-radius: 4px;
+      background-color: #2b6cb0;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-left: 12px;
+      white-space: nowrap;
+      transition: background-color 0.3s ease;
+    }
 
-   .gear-item {
-     background: #fff;
-     padding: 10px 12px;
-     margin: 6px 0;
-     border-left: 4px solid #2b6cb0;
-     border-radius: 6px;
-     font-weight: 600;
-     display: flex;
-     flex-direction: column;
-     align-items: flex-start;
-   }
-
-   .buy-button {
-     margin-top: 8px;
-     width: auto;
-     padding: 6px 12px;
-     font-weight: 600;
-     border-radius: 4px;
-   }
-
-   .suggestion-box {
-     background: #eef6ff;
-     border: 1px solid #2b6cb0;
-     padding: 20px;
-     margin-top: 20px;
-     border-radius: 8px;
-     white-space: pre-wrap;
-     font-family: monospace;
-     color: #1a365d;
-   }
-
-   .topbar {
-     width: 100%;
-     background-color: #2b6cb0;
-     padding: 15px 0;
-     text-align: center;
-     color: white;
-     font-size: 1.7rem;
-     font-weight: 600;
-     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-     position: fixed;
-     top: 0;
-     left: 0;
-     z-index: 10;
-   }
-
-   /* Hide fish animation for now */
-   svg.fish {
-     display: none !important;
-   }
-
-   /* Results layout */
-   .results-header {
-     text-align: center;
-     margin: 20px 0 10px;
-     color: #2b6cb0;
-   }
-
-   .results-wrapper {
-     max-width: 400px;
-     width: 90%;
-     margin: 0 auto 30px;
-     display: block;
-   }
+    .buy-button:hover {
+      background-color: #1e4f80;
+    }
   </style>
 </head>
 <body>
-  <!-- Fish animation SVG hidden -->
-  <svg class="fish" id="fish" style="position: fixed; top: 5em; left: 0; pointer-events: none; z-index: 0;">
-    <!-- (SVG paths omitted for brevity, same as original) -->
-  </svg>
-
   <div class="topbar">🎣 Bait & Tackle Advisor</div>
 
-  <div class="container">
+  <div class="container" style="max-width: 400px; margin: 30px auto 0;">
     <h1>Tell us about your hunt</h1>
-
     <label for="targetFish">What fish are you trying to catch?</label>
     <input
       type="text"
@@ -185,9 +135,11 @@
           return;
         }
 
-        const container = document.querySelector('.container');
-        container.remove();
+        // Remove the form container once submitted
+        const formContainer = document.querySelector('.container');
+        formContainer.remove();
 
+        // Show loading
         const loading = document.createElement('p');
         loading.textContent = "Getting your gear recommendations...";
         loading.style.color = '#2b6cb0';
@@ -210,11 +162,13 @@
 
           const suggestions = data.suggestions;
 
+          // Header on top
           const header = document.createElement('h2');
           header.className = 'results-header';
           header.textContent = `Here’s what we recommend for catching a ${targetFish}`;
           document.body.appendChild(header);
 
+          // Wrapper for all categories
           const resultsWrapper = document.createElement('div');
           resultsWrapper.className = 'results-wrapper';
 
@@ -229,10 +183,16 @@
             title.textContent = category;
             section.appendChild(title);
 
+            // Grid container for gear items
+            const grid = document.createElement('div');
+            grid.className = 'gear-items-grid';
+
             items.forEach(item => {
               const box = document.createElement('div');
               box.className = 'gear-item';
-              box.textContent = item;
+
+              const text = document.createElement('span');
+              text.textContent = item;
 
               const buyBtn = document.createElement('button');
               buyBtn.className = 'buy-button';
@@ -243,11 +203,12 @@
                 window.open(url, '_blank');
               });
 
-              box.appendChild(document.createElement('br'));
+              box.appendChild(text);
               box.appendChild(buyBtn);
-              section.appendChild(box);
+              grid.appendChild(box);
             });
 
+            section.appendChild(grid);
             resultsWrapper.appendChild(section);
           });
 
