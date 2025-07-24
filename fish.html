@@ -6,135 +6,28 @@
   <title>Fish Target</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-   body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding-top: 70px; /* to prevent topbar overlap */
-  position: relative;
-  overflow-x: hidden;
-}
-
-.container {
-  background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  width: 90%;
-  max-width: 400px;
-  position: relative;
-  z-index: 1;
-}
-
-h1 {
-  margin-bottom: 20px;
-  text-align: center;
-  color: #2b6cb0;
-}
-
-label {
-  display: block;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-select,
-input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-button {
-  margin-top: 20px;
-  width: 100%;
-  background-color: #2b6cb0;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button:hover {
-  background-color: #1e4f80;
-}
-
-.gear-category {
-  margin: 30px;
-  padding: 20px;
-  background: #f1faff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.gear-category h2 {
-  margin-bottom: 10px;
-  color: #2b6cb0;
-}
-
-.gear-item {
-  background: #fff;
-  padding: 10px 12px;
-  margin: 6px 0;
-  border-left: 4px solid #2b6cb0;
-  border-radius: 6px;
-  font-weight: 600;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.suggestion-box {
-  background: #eef6ff;
-  border: 1px solid #2b6cb0;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 8px;
-  white-space: pre-wrap;
-  font-family: monospace;
-  color: #1a365d;
-}
-
-.topbar {
-  width: 100%;
-  background-color: #2b6cb0;
-  padding: 15px 0;
-  text-align: center;
-  color: white;
-  font-size: 1.7rem;
-  font-weight: 600;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
-
-/* Fish Animation */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 0 20px 40px;
+    }
+	
+	/* Fish Animation */
 svg.fish {
   overflow: visible;
   width: 235px;
   height: 104px;
   margin-left: -235px;
-  position: fixed;
+  position: fixed; /* fixed for smooth background */
   top: 5em;
   left: 0;
   animation: swim 20s linear infinite;
   z-index: 0;
   pointer-events: none;
-}
-
-/* Make all fish parts blue */
-svg.fish * {
-  fill: #2b6cb0 !important;
 }
 
 @keyframes swim {
@@ -149,7 +42,37 @@ svg.fish * {
   }
 }
 
-/* Bounce animation */
+/* Bounce animation for fish parts */
+svg #fish1,
+svg #fish2,
+svg #fish3,
+svg #fish4,
+svg #fish5,
+svg #fish6 {
+  fill: #528484;
+  animation: bounce 2s infinite;
+}
+
+svg #fish2 {
+  animation-delay: 0.5s;
+}
+
+svg #fish3 {
+  animation-delay: 0.2s;
+}
+
+svg #fish4 {
+  animation-delay: 0.4s;
+}
+
+svg #fish5 {
+  animation-delay: 0.1s;
+}
+
+svg #fish6 {
+  animation-delay: 0.3s;
+}
+
 @keyframes bounce {
   0%, 50%, 100% {
     transform: translateY(0);
@@ -162,21 +85,136 @@ svg.fish * {
   }
 }
 
-svg #fish1,
-svg #fish2,
-svg #fish3,
-svg #fish4,
-svg #fish5,
-svg #fish6 {
-  animation: bounce 2s infinite;
+	
+    .topbar {
+      width: 100%;
+      background-color: #3b7d7d;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    .container {
+      margin-top: 70px;
+      width: 100%;
+      max-width: 400px;
+      background: #fff;
+      padding: 25px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    button#submitFishBtn {
+      background-color: #2b6cb0;
+      color: white;
+      font-weight: 700;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button#submitFishBtn:hover {
+      background-color: #1e4f80;
+    }
+
+    h2.results-header {
+      margin: 30px 0 20px;
+      color: #FFFFFF;
+      text-align: center;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .results-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .gear-category {
+      background: #f1faff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 15px 20px;
+      width: 280px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .gear-category h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: #2b6cb0;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .gear-item {
+  background: #fff;
+  padding: 10px 12px;
+  margin: 6px 0;
+  border-left: 4px solid #2b6cb0;
+  border-radius: 6px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-svg #fish2 { animation-delay: 0.5s; }
-svg #fish3 { animation-delay: 0.2s; }
-svg #fish4 { animation-delay: 0.4s; }
-svg #fish5 { animation-delay: 0.1s; }
-svg #fish6 { animation-delay: 0.3s; }
 
+    .buy-button {
+      margin-top: auto;
+      align-self: center;
+      padding: 8px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      width: auto;
+      min-width: 100px;
+      transition: background-color 0.3s ease;
+    }
+
+    .buy-button:hover {
+      background-color: #218838;
+    }
   </style>
 </head>
 <body>
@@ -277,7 +315,7 @@ svg #fish6 { animation-delay: 0.3s; }
 
           const header = document.createElement('h2');
           header.className = 'results-header';
-          header.textContent = Here’s what we recommend for catching a ${targetFish};
+          header.textContent = `Here’s what we recommend for catching a ${targetFish}`;
           document.body.appendChild(header);
 
           const resultsWrapper = document.createElement('div');
@@ -304,7 +342,7 @@ svg #fish6 { animation-delay: 0.3s; }
 			  buyBtn.textContent = 'Buy';
 			  buyBtn.addEventListener('click', () => {
 				const searchQuery = encodeURIComponent(item);
-				const url = https://www.amazon.com/s?k=${searchQuery}&tag=clamtour-20;
+				const url = `https://www.amazon.com/s?k=${searchQuery}&tag=clamtour-20`;
 				window.open(url, '_blank');
 			  });
 
