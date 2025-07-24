@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #6ca3a3; /* replaced linear gradient with your fish background color */
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,7 +84,6 @@ button:hover {
   align-items: flex-start;
 }
 
-
 .suggestion-box {
   background: #eef6ff;
   border: 1px solid #2b6cb0;
@@ -98,7 +97,7 @@ button:hover {
 
 .topbar {
   width: 100%;
-  background-color: #3b7d7d;
+  background-color: #2b6cb0;
   padding: 1px 0;
   text-align: center;
   color: white;
@@ -117,12 +116,17 @@ svg.fish {
   width: 235px;
   height: 104px;
   margin-left: -235px;
-  position: fixed; /* fixed for smooth background */
+  position: fixed;
   top: 5em;
   left: 0;
   animation: swim 20s linear infinite;
   z-index: 0;
   pointer-events: none;
+}
+
+/* Make all fish parts blue */
+svg.fish * {
+  fill: #2b6cb0 !important;
 }
 
 @keyframes swim {
@@ -137,37 +141,7 @@ svg.fish {
   }
 }
 
-/* Bounce animation for fish parts */
-svg #fish1,
-svg #fish2,
-svg #fish3,
-svg #fish4,
-svg #fish5,
-svg #fish6 {
-  fill: #528484;
-  animation: bounce 2s infinite;
-}
-
-svg #fish2 {
-  animation-delay: 0.5s;
-}
-
-svg #fish3 {
-  animation-delay: 0.2s;
-}
-
-svg #fish4 {
-  animation-delay: 0.4s;
-}
-
-svg #fish5 {
-  animation-delay: 0.1s;
-}
-
-svg #fish6 {
-  animation-delay: 0.3s;
-}
-
+/* Bounce animation */
 @keyframes bounce {
   0%, 50%, 100% {
     transform: translateY(0);
@@ -179,3 +153,18 @@ svg #fish6 {
     transform: translateY(-3px);
   }
 }
+
+svg #fish1,
+svg #fish2,
+svg #fish3,
+svg #fish4,
+svg #fish5,
+svg #fish6 {
+  animation: bounce 2s infinite;
+}
+
+svg #fish2 { animation-delay: 0.5s; }
+svg #fish3 { animation-delay: 0.2s; }
+svg #fish4 { animation-delay: 0.4s; }
+svg #fish5 { animation-delay: 0.1s; }
+svg #fish6 { animation-delay: 0.3s; }
