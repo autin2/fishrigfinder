@@ -3,45 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fishing Conditions | FishRigFinder</title>
+  <title>Fishing Conditions</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .conditions-container {
+      margin-top: 80px;
+      padding: 20px;
+      text-align: left;
+    }
+
+    .conditions-section {
+      margin-bottom: 40px;
+    }
+
+    .gear-horizontal {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .gear-horizontal .gear-item {
+      background: #fff;
+      padding: 10px 16px;
+      border-left: 4px solid #2b6cb0;
+      border-radius: 6px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+  </style>
 </head>
 <body>
-
   <div class="topbar">
-    <a href="index.html" style="color: white; margin-right: 20px;">Home</a>
-    <a href="about.html" style="color: white; margin-right: 20px;">About</a>
-    <a href="conditions.html" style="color: white;">Conditions</a>
+    <a href="index.html" style="margin: 0 15px; color: white; text-decoration: none;">Home</a>
+    <a href="about.html" style="margin: 0 15px; color: white; text-decoration: none;">About</a>
+    <a href="conditions.html" style="margin: 0 15px; color: white; text-decoration: none;">Conditions</a>
+    <a href="collections.html" style="margin: 0 15px; color: white; text-decoration: none;">Collections</a>
   </div>
 
-  <!-- Fish animation -->
-  <svg class="fish">
-    <!-- your existing SVG code here -->
-  </svg>
-
-  <div class="container">
+  <div class="container conditions-container">
     <h1>Fishing Conditions</h1>
 
-    <p>Knowing the right conditions for each fishing environment can dramatically increase your chances of success. Here's how to adjust your approach based on where and how you're fishing.</p>
-
-    <div class="gear-category">
-      <h2>🎣 Freshwater Fishing</h2>
-      <div class="gear-item">
-        <strong>Lakes & Ponds:</strong> On sunny days, fish deeper using Carolina rigs. Overcast? Try topwater lures like frogs or poppers near cover.<br><br>
-        <strong>Rivers & Streams:</strong> Current matters. Use compact rigs like jigs or Texas rigs with heavier weights to stay in the strike zone.<br><br>
-        <strong>Clarity & Temp:</strong> Clear water = natural colors. Murky water = bright or noisy lures. Cold temps mean slow presentation with finesse rigs.
+    <div class="conditions-section">
+      <h2>Freshwater Conditions</h2>
+      <p>Freshwater fishing can be influenced by water clarity, temperature, and recent rainfall. In murky or warm water, bass may hide deeper. In clearer water, finesse lures like soft plastics or drop-shots are more effective.</p>
+      <div class="gear-horizontal">
+        <div class="gear-item">Drop Shot</div>
+        <div class="gear-item">Spinnerbait</div>
+        <div class="gear-item">Texas Rig</div>
+        <div class="gear-item">Crankbait</div>
+        <div class="gear-item">Wacky Worm</div>
       </div>
     </div>
 
-    <div class="gear-category">
-      <h2>🌊 Saltwater Fishing</h2>
-      <div class="gear-item">
-        <strong>Inshore:</strong> Tides and moon phases are key. For redfish or snook, use shrimp imitations or paddle tails. Early mornings during rising tide work best.<br><br>
-        <strong>Surf Fishing:</strong> Wind and wave action affect bait visibility. Use pyramid sinkers and bait holders like sand fleas or cut bait for better control.<br><br>
-        <strong>Offshore:</strong> Water clarity and temp influence species depth. Use live bait or deep jigs and follow reef drop-offs during warmer months.
+    <div class="conditions-section">
+      <h2>Saltwater Conditions</h2>
+      <p>Saltwater fishing depends heavily on tide movement, water temperature, and wind. Inshore anglers benefit from early morning outgoing tides. Offshore success improves with stable barometric pressure and bait presence.</p>
+      <div class="gear-horizontal">
+        <div class="gear-item">Bucktail Jig</div>
+        <div class="gear-item">Paddle Tail</div>
+        <div class="gear-item">Topwater Popper</div>
+        <div class="gear-item">Spoon</div>
+        <div class="gear-item">Live Bait Rig</div>
       </div>
     </div>
   </div>
-
 </body>
 </html>
