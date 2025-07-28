@@ -3,73 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Collections - Curated Fishing Gear</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Curated Fishing Gear</title>
   <style>
     body {
       padding: 20px;
       font-family: 'Segoe UI', sans-serif;
-      background-color: white;
+      background: white;
       color: #2b6cb0;
+      margin: 0;
     }
-
     h1 {
       text-align: center;
       margin-bottom: 30px;
     }
-
     .collections-container {
       display: flex;
       overflow-x: auto;
       gap: 20px;
       padding-bottom: 10px;
+      width: 100%;
+      box-sizing: border-box;
+      scrollbar-width: thin;
     }
-
     .bundle {
-      min-width: 250px;
-      border: 2px solid #2b6cb0;
-      border-radius: 12px;
-      padding: 15px;
-      background: #f1faff;
+      flex: 0 0 auto;
+      background: #eef6ff;
+      border: 1px solid #2b6cb0;
+      border-radius: 10px;
+      padding: 20px;
+      width: 280px;
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 4px 8px rgba(43,108,176,0.15);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-      text-align: center;
     }
-
-    .bundle:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 14px rgba(43,108,176,0.3);
-    }
-
-    .bundle h2 {
+    .bundle h3 {
+      margin-top: 0;
       margin-bottom: 10px;
-      font-size: 1.2rem;
-      color: #1e4f80;
+      font-weight: 700;
     }
-
     .bundle p {
       flex-grow: 1;
-      font-size: 0.9rem;
       margin-bottom: 15px;
-      color: #134e6f;
     }
-
-    .bundle a {
+    .bundle a.button {
       background-color: #2b6cb0;
       color: white;
-      padding: 10px 0;
-      border-radius: 6px;
-      font-weight: 600;
       text-decoration: none;
+      padding: 12px;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: 600;
       display: block;
-      transition: background-color 0.3s ease;
+      cursor: pointer;
     }
-
-    .bundle a:hover {
+    .bundle a.button:hover {
       background-color: #1e4f80;
     }
   </style>
@@ -79,29 +67,59 @@
   <h1>Curated Fishing Gear</h1>
 
   <div class="collections-container">
+
     <div class="bundle">
-      <h2>Freshwater Starter Kit</h2>
-      <p>Everything you need to start fishing in lakes and rivers.</p>
-      <a href="https://www.amazon.com/s?k=freshwater+fishing+starter+kit&tag=clamtour-20" target="_blank" rel="noopener noreferrer">Shop on Amazon</a>
+      <h3>Freshwater Bass Bundle</h3>
+      <p>Rod, reel, line, and lures perfect for bass fishing in freshwater lakes and rivers.</p>
+      <a 
+        class="button" 
+        href="https://www.amazon.com/s?k=freshwater+bass+fishing+gear&tag=clamtour-20" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        Shop on Amazon
+      </a>
     </div>
 
     <div class="bundle">
-      <h2>Saltwater Essentials</h2>
-      <p>Top gear for saltwater fishing by the coast and ocean.</p>
-      <a href="https://www.amazon.com/s?k=saltwater+fishing+essentials&tag=clamtour-20" target="_blank" rel="noopener noreferrer">Shop on Amazon</a>
+      <h3>Saltwater Surf Fishing Bundle</h3>
+      <p>Durable surf rods and reels with corrosion-resistant components for beach fishing.</p>
+      <a 
+        class="button" 
+        href="https://www.amazon.com/s?k=saltwater+surf+fishing+gear&tag=clamtour-20" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        Shop on Amazon
+      </a>
     </div>
 
     <div class="bundle">
-      <h2>Fly Fishing Set</h2>
-      <p>Curated gear for the ultimate fly fishing experience.</p>
-      <a href="https://www.amazon.com/s?k=fly+fishing+set&tag=clamtour-20" target="_blank" rel="noopener noreferrer">Shop on Amazon</a>
+      <h3>Fly Fishing Starter Kit</h3>
+      <p>Complete set for beginner fly fishermen including rod, reel, and flies.</p>
+      <a 
+        class="button" 
+        href="https://www.amazon.com/s?k=fly+fishing+starter+kit&tag=clamtour-20" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        Shop on Amazon
+      </a>
     </div>
 
     <div class="bundle">
-      <h2>Kids Fishing Bundle</h2>
-      <p>Safe and fun gear perfect for young anglers.</p>
-      <a href="https://www.amazon.com/s?k=kids+fishing+gear&tag=clamtour-20" target="_blank" rel="noopener noreferrer">Shop on Amazon</a>
+      <h3>Ice Fishing Essentials</h3>
+      <p>Rod, tip-ups, and tackle designed specifically for winter ice fishing conditions.</p>
+      <a 
+        class="button" 
+        href="https://www.amazon.com/s?k=ice+fishing+gear&tag=clamtour-20" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        Shop on Amazon
+      </a>
     </div>
+
   </div>
 
 </body>
