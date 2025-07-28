@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fishing Gear Collections</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      padding-top: 70px;
+    }
+
+    .topbar {
+      width: 100%;
+      background-color: #2b6cb0;
+      padding: 1px 0;
+      text-align: center;
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #2b6cb0;
+    }
+
+    .collections-container {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .collection {
+      min-width: 300px;
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+
+    .collection h2 {
+      color: #2b6cb0;
+      margin-bottom: 10px;
+    }
+
+    .collection ul {
+      padding-left: 20px;
+    }
+
+    .collection button {
+      margin-top: 10px;
+      background-color: #2b6cb0;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .collection button:hover {
+      background-color: #1e4f80;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">FishRigFinder</div>
+  <h1>Curated Fishing Gear Collections</h1>
+  <div class="collections-container">
+
+    <div class="collection">
+      <h2>Beginner Bass Kit</h2>
+      <ul>
+        <li>Spinning Rod & Reel</li>
+        <li>Soft Plastics</li>
+        <li>Line & Hooks</li>
+      </ul>
+      <a href="https://www.amazon.com/s?k=beginner+bass+fishing+kit&tag=clamtour-20" target="_blank">
+        <button>Shop on Amazon</button>
+      </a>
+    </div>
+
+    <div class="collection">
+      <h2>Topwater Lure Pack</h2>
+      <ul>
+        <li>Frogs</li>
+        <li>Poppers</li>
+        <li>Walk-the-dog lures</li>
+      </ul>
+      <a href="https://www.amazon.com/s?k=topwater+fishing+lure+pack&tag=clamtour-20" target="_blank">
+        <button>Shop on Amazon</button>
+      </a>
+    </div>
+
+    <div class="collection">
+      <h2>Saltwater Essentials</h2>
+      <ul>
+        <li>Heavy Duty Rod</li>
+        <li>Leader Line</li>
+        <li>Spoons & Jigs</li>
+      </ul>
+      <a href="https://www.amazon.com/s?k=saltwater+fishing+gear+bundle&tag=clamtour-20" target="_blank">
+        <button>Shop on Amazon</button>
+      </a>
+    </div>
+
+    <div class="collection">
+      <h2>Winter Fishing Gear</h2>
+      <ul>
+        <li>Insulated Gloves</li>
+        <li>Ice Rod & Lures</li>
+        <li>Thermal Bibs</li>
+      </ul>
+      <a href="https://www.amazon.com/s?k=winter+fishing+gear+kit&tag=clamtour-20" target="_blank">
+        <button>Shop on Amazon</button>
+      </a>
+    </div>
+
+    <div class="collection">
+      <h2>Budget Setup</h2>
+      <ul>
+        <li>Affordable Combo</li>
+        <li>Value Lure Pack</li>
+        <li>Basic Tackle Box</li>
+      </ul>
+      <a href="https://www.amazon.com/s?k=budget+fishing+starter+kit&tag=clamtour-20" target="_blank">
+        <button>Shop on Amazon</button>
+      </a>
+    </div>
+
+    <div class="collection">
+      <h2>Pro Tournament Loadout</h2>
+      <ul>
+        <li>High-end Rods</li>
+        <li>Electronics</li>
+        <li>Specialty Lures</li>
+      </ul>
+      <a href="https://www.amazon.com/s?k=pro+fishing+gear+setup&tag=clamtour-20" target="_blank">
+        <button>Shop on Amazon</button>
+      </a>
+    </div>
+
+  </div>
+</body>
+</html>
