@@ -3,170 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Curated Fishing Gear</title>
+  <title>Collections - Fish Rig Finder</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    body {
+    .collections-container {
+      max-width: 1000px;
+      margin: 100px auto 50px;
       padding: 20px;
-      font-family: 'Segoe UI', sans-serif;
-      background: white;
-      color: #2b6cb0;
-      margin: 0;
-      padding-top: 70px; /* to avoid overlap with fixed topbar */
+      background-color: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
     }
+
+    .collections-container h1 {
+      color: #2b6cb0;
+      margin-bottom: 30px;
+    }
+
+    .collection-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .collection-item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      width: 200px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .collection-item a {
+      display: block;
+      font-weight: 600;
+      color: #2b6cb0;
+      text-decoration: none;
+    }
+
     .topbar {
-      width: 100%;
       background-color: #2b6cb0;
-      padding: 10px 20px;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: center;
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 10;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: white;
-      font-weight: 600;
-      font-size: 1rem;
-      box-sizing: border-box;
-    }
-    .topbar .logo {
-      font-size: 1.2rem;
-      font-weight: 700;
-    }
-    .topbar nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-    .topbar nav a:hover {
-      color: #a8c0ff;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .collections-wrapper {
-      display: flex;
-      justify-content: center; /* centers horizontally */
-      overflow-x: auto;
-      padding-bottom: 10px;
       width: 100%;
-      box-sizing: border-box;
-      scrollbar-width: thin;
+      z-index: 1000;
     }
-    .collections-container {
-      display: flex;
-      gap: 20px;
-    }
-    .bundle {
-      flex: 0 0 auto;
-      background: #eef6ff;
-      border: 1px solid #2b6cb0;
-      border-radius: 10px;
-      padding: 20px;
-      width: 280px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .bundle h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-    .bundle p {
-      flex-grow: 1;
-      margin-bottom: 15px;
-    }
-    .bundle a.button {
-      background-color: #2b6cb0;
+
+    .topbar a {
       color: white;
       text-decoration: none;
-      padding: 12px;
-      border-radius: 6px;
-      text-align: center;
+      margin: 0 15px;
       font-weight: 600;
-      display: block;
-      cursor: pointer;
     }
-    .bundle a.button:hover {
-      background-color: #1e4f80;
+
+    .topbar a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-
-   <div class="topbar">
-    <a href="index.html" style="margin: 0 15px; color: white; text-decoration: none;">Home</a>
-    <a href="about.html" style="margin: 0 15px; color: white; text-decoration: none;">About</a>
-    <a href="conditions.html" style="margin: 0 15px; color: white; text-decoration: none;">Conditions</a>
-    <a href="collections.html" style="margin: 0 15px; color: white; text-decoration: none;">Collections</a>
+  <div class="topbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="conditions.html">Conditions</a>
+    <a href="collections.html">Collections</a>
   </div>
 
-
-  <h1>Curated Fishing Gear</h1>
-
-  <div class="collections-wrapper">
-    <div class="collections-container">
-
-      <div class="bundle">
-        <h3>Freshwater Bass Bundle</h3>
-        <p>Rod, reel, line, and lures perfect for bass fishing in freshwater lakes and rivers.</p>
-        <a 
-          class="button" 
-          href="https://www.amazon.com/s?k=freshwater+bass+fishing+gear&tag=clamtour-20" 
-          target="_blank" 
-          rel="noopener noreferrer"
-        >
-          Shop on Amazon
-        </a>
+  <div class="collections-container">
+    <h1>Curated Fishing Gear</h1>
+    <div class="collection-items">
+      <div class="collection-item">
+        <a href="https://www.amazon.com/s?k=bass+fishing+starter+kit&tag=clamtour-20" target="_blank">Bass Fishing Kit</a>
       </div>
-
-      <div class="bundle">
-        <h3>Saltwater Surf Fishing Bundle</h3>
-        <p>Durable surf rods and reels with corrosion-resistant components for beach fishing.</p>
-        <a 
-          class="button" 
-          href="https://www.amazon.com/s?k=saltwater+surf+fishing+gear&tag=clamtour-20" 
-          target="_blank" 
-          rel="noopener noreferrer"
-        >
-          Shop on Amazon
-        </a>
+      <div class="collection-item">
+        <a href="https://www.amazon.com/s?k=crappie+fishing+bundle&tag=clamtour-20" target="_blank">Crappie Essentials</a>
       </div>
-
-      <div class="bundle">
-        <h3>Fly Fishing Starter Kit</h3>
-        <p>Complete set for beginner fly fishermen including rod, reel, and flies.</p>
-        <a 
-          class="button" 
-          href="https://www.amazon.com/s?k=fly+fishing+starter+kit&tag=clamtour-20" 
-          target="_blank" 
-          rel="noopener noreferrer"
-        >
-          Shop on Amazon
-        </a>
+      <div class="collection-item">
+        <a href="https://www.amazon.com/s?k=panfish+tackle+set&tag=clamtour-20" target="_blank">Panfish Kit</a>
       </div>
-
-      <div class="bundle">
-        <h3>Ice Fishing Essentials</h3>
-        <p>Rod, tip-ups, and tackle designed specifically for winter ice fishing conditions.</p>
-        <a 
-          class="button" 
-          href="https://www.amazon.com/s?k=ice+fishing+gear&tag=clamtour-20" 
-          target="_blank" 
-          rel="noopener noreferrer"
-        >
-          Shop on Amazon
-        </a>
+      <div class="collection-item">
+        <a href="https://www.amazon.com/s?k=saltwater+fishing+gear+bundle&tag=clamtour-20" target="_blank">Saltwater Setup</a>
       </div>
-
+      <div class="collection-item">
+        <a href="https://www.amazon.com/s?k=fishing+accessory+kit&tag=clamtour-20" target="_blank">Accessories Bundle</a>
+      </div>
     </div>
   </div>
-
 </body>
 </html>
