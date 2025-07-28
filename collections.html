@@ -16,14 +16,19 @@
       text-align: center;
       margin-bottom: 30px;
     }
-    .collections-container {
+    .collections-wrapper {
       display: flex;
+      justify-content: center; /* centers horizontally */
       overflow-x: auto;
-      gap: 20px;
       padding-bottom: 10px;
       width: 100%;
       box-sizing: border-box;
       scrollbar-width: thin;
+    }
+    .collections-container {
+      display: flex;
+      gap: 20px;
+      /* no overflow here to allow centering by wrapper */
     }
     .bundle {
       flex: 0 0 auto;
@@ -66,60 +71,62 @@
 
   <h1>Curated Fishing Gear</h1>
 
-  <div class="collections-container">
+  <div class="collections-wrapper">
+    <div class="collections-container">
 
-    <div class="bundle">
-      <h3>Freshwater Bass Bundle</h3>
-      <p>Rod, reel, line, and lures perfect for bass fishing in freshwater lakes and rivers.</p>
-      <a 
-        class="button" 
-        href="https://www.amazon.com/s?k=freshwater+bass+fishing+gear&tag=clamtour-20" 
-        target="_blank" 
-        rel="noopener noreferrer"
-      >
-        Shop on Amazon
-      </a>
+      <div class="bundle">
+        <h3>Freshwater Bass Bundle</h3>
+        <p>Rod, reel, line, and lures perfect for bass fishing in freshwater lakes and rivers.</p>
+        <a 
+          class="button" 
+          href="https://www.amazon.com/s?k=freshwater+bass+fishing+gear&tag=clamtour-20" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          Shop on Amazon
+        </a>
+      </div>
+
+      <div class="bundle">
+        <h3>Saltwater Surf Fishing Bundle</h3>
+        <p>Durable surf rods and reels with corrosion-resistant components for beach fishing.</p>
+        <a 
+          class="button" 
+          href="https://www.amazon.com/s?k=saltwater+surf+fishing+gear&tag=clamtour-20" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          Shop on Amazon
+        </a>
+      </div>
+
+      <div class="bundle">
+        <h3>Fly Fishing Starter Kit</h3>
+        <p>Complete set for beginner fly fishermen including rod, reel, and flies.</p>
+        <a 
+          class="button" 
+          href="https://www.amazon.com/s?k=fly+fishing+starter+kit&tag=clamtour-20" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          Shop on Amazon
+        </a>
+      </div>
+
+      <div class="bundle">
+        <h3>Ice Fishing Essentials</h3>
+        <p>Rod, tip-ups, and tackle designed specifically for winter ice fishing conditions.</p>
+        <a 
+          class="button" 
+          href="https://www.amazon.com/s?k=ice+fishing+gear&tag=clamtour-20" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          Shop on Amazon
+        </a>
+      </div>
+
     </div>
-
-    <div class="bundle">
-      <h3>Saltwater Surf Fishing Bundle</h3>
-      <p>Durable surf rods and reels with corrosion-resistant components for beach fishing.</p>
-      <a 
-        class="button" 
-        href="https://www.amazon.com/s?k=saltwater+surf+fishing+gear&tag=clamtour-20" 
-        target="_blank" 
-        rel="noopener noreferrer"
-      >
-        Shop on Amazon
-      </a>
-    </div>
-
-    <div class="bundle">
-      <h3>Fly Fishing Starter Kit</h3>
-      <p>Complete set for beginner fly fishermen including rod, reel, and flies.</p>
-      <a 
-        class="button" 
-        href="https://www.amazon.com/s?k=fly+fishing+starter+kit&tag=clamtour-20" 
-        target="_blank" 
-        rel="noopener noreferrer"
-      >
-        Shop on Amazon
-      </a>
-    </div>
-
-    <div class="bundle">
-      <h3>Ice Fishing Essentials</h3>
-      <p>Rod, tip-ups, and tackle designed specifically for winter ice fishing conditions.</p>
-      <a 
-        class="button" 
-        href="https://www.amazon.com/s?k=ice+fishing+gear&tag=clamtour-20" 
-        target="_blank" 
-        rel="noopener noreferrer"
-      >
-        Shop on Amazon
-      </a>
-    </div>
-
   </div>
 
 </body>
