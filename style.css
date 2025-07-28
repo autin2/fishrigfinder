@@ -11,6 +11,17 @@ body {
   overflow-x: hidden; /* avoid horizontal scroll from animation */
 }
 
+.collections-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+  /* Make sure container takes full width but is block below header */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
 .container {
   background: #fff;
   padding: 30px;
