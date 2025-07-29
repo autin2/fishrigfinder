@@ -183,38 +183,37 @@ svg #fish6 {
       text-align: center;
     }
 
-    .gear-item {
-  background: #fff;
-  padding: 10px 12px;
-  margin: 6px 0;
-  border-left: 4px solid #2b6cb0;
-  border-radius: 6px;
-  font-weight: 600;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+   .gear-item {
+  background: #ffffff;
+  border: 1px solid #c3daf5;
+  padding: 16px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.gear-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
-    .buy-button {
-      margin-top: auto;
-      align-self: center;
-      padding: 8px 20px;
-      background-color: #28a745;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 1rem;
-      width: auto;
-      min-width: 100px;
-      transition: background-color 0.3s ease;
-    }
+   .buy-button {
+  margin-top: 12px;
+  padding: 10px 16px;
+  background-color: #2b6cb0;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
 
-    .buy-button:hover {
-      background-color: #218838;
-    }
+.buy-button:hover {
+  background-color: #1e4f80;
+}
   </style>
 </head>
 <body>
