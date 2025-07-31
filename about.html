@@ -23,7 +23,6 @@
   }
   </script>
 
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
@@ -54,18 +53,22 @@
       text-decoration: underline;
     }
 
-     .about-container {
-    max-width: 860px;
-    margin: 0 auto 50px;
-    padding: 100px 20px 20px; /* Added top padding for fixed navbar */
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    line-height: 1.7;
-    font-size: 1.05rem;
-    color: #2d3748;
-  }
+    /* NEW SPACER BELOW NAV */
+    .topbar-spacer {
+      height: 80px; /* adjust based on topbar height */
+    }
 
+    .about-container {
+      max-width: 860px;
+      margin: 0 auto 50px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      line-height: 1.7;
+      font-size: 1.05rem;
+      color: #2d3748;
+    }
 
     .about-container h1, .about-container h2 {
       color: #2b6cb0;
@@ -95,8 +98,12 @@
         padding: 10px;
       }
 
+      .topbar-spacer {
+        height: 100px;
+      }
+
       .about-container {
-        margin: 120px 10px 50px;
+        margin: 0 10px 50px;
         padding: 16px;
       }
     }
@@ -111,6 +118,9 @@
     <a href="knots.html">Knots</a>
     <a href="sponsor.html">Get Sponsored</a>
   </div>
+
+  <!-- Spacer pushes content below fixed topbar -->
+  <div class="topbar-spacer"></div>
 
   <div class="about-container" role="main">
     <h1>About Fish Rig Finder</h1>
