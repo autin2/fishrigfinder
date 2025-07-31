@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Fish Rig Finder - AI Fishing Rig Recommendations, Tackle Advice & Bait Tips</title>
-  <meta name="description" content="Fish Rig Finder is an AI-powered tool offering personalized fishing rig, bait, and tackle recommendations. Perfect for bass, crappie, saltwater, and freshwater anglers seeking optimized gear setups." />
-  <meta name="keywords" content="fishing rigs, fishing gear, bait tips, AI fishing assistant, best tackle, bass fishing, saltwater fishing, freshwater fishing, fish rig suggestions, personalized fishing advice" />
+  <meta name="description" content="Fish Rig Finder is an AI-powered tool that gives personalized fishing rig, bait, and tackle recommendations based on your gear and conditions. Ideal for bass, crappie, panfish, and saltwater anglers." />
+  <meta name="keywords" content="fishing rigs, fishing gear, bait tips, AI fishing tool, tackle recommendations, bass fishing, crappie fishing, saltwater fishing, freshwater fishing" />
   <meta name="author" content="FishRigFinder" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://fishrigfinder.com/about.html" />
 
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About Fish Rig Finder - AI Fishing Rig Recommendations" />
+  <meta property="og:description" content="Get precise, AI-driven fishing rig, bait, and tackle advice tuned to your gear and conditions." />
+  <meta property="og:url" content="https://fishrigfinder.com/about.html" />
+  <meta property="og:site_name" content="Fish Rig Finder" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -23,148 +35,219 @@
   }
   </script>
 
+  <!-- Styles -->
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #ffffff;
+    :root {
+      /* Adjust this value to match your topbar height */
+      --topbar-height: 72px;
+      --container-max: 860px;
+      --brand: #2b6cb0;
+      --text: #2d3748;
+      --bg: #ffffff;
+      --card: #f9f9f9;
     }
 
+    @media (max-width: 640px) {
+      /* If your nav wraps on mobile, give it more room */
+      :root { --topbar-height: 104px; }
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                   Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+                   "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Accessibility skip link */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: -999px;
+    }
+    .skip-link:focus {
+      left: 12px;
+      top: 12px;
+      background: #fff;
+      color: #000;
+      padding: 8px 12px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.15);
+      z-index: 1001;
+    }
+
+    /* Fixed Topbar */
     .topbar {
-      background-color: #2b6cb0;
-      padding: 16px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      z-index: 999;
+      height: var(--topbar-height);
+      background-color: var(--brand);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 16px;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+      overflow: hidden;
     }
-
     .topbar a {
-      color: white;
+      color: #ffffff;
       text-decoration: none;
       font-weight: 600;
+      white-space: nowrap;
     }
+    .topbar a:hover { text-decoration: underline; }
 
-    .topbar a:hover {
-      text-decoration: underline;
-    }
-
-    /* NEW SPACER BELOW NAV */
+    /* Spacer that guarantees content starts below the fixed topbar */
     .topbar-spacer {
-      height: 80px; /* adjust based on topbar height */
+      height: var(--topbar-height);
+      width: 100%;
+      flex: 0 0 auto;
     }
 
+    /* Main Container */
     .about-container {
-      max-width: 860px;
-      margin: 0 auto 50px;
-      padding: 20px;
-      background-color: #f9f9f9;
+      max-width: var(--container-max);
+      margin: 24px auto 60px;
+      padding: 24px;
+      background-color: var(--card);
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      line-height: 1.7;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       font-size: 1.05rem;
-      color: #2d3748;
     }
+    .about-container h1,
+    .about-container h2 {
+      color: var(--brand);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+    .about-container h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin: 4px 0 12px;
+    }
+    .about-container h2 {
+      font-size: 1.5rem;
+      margin: 28px 0 12px;
+    }
+    .about-container p { margin: 0 0 16px; }
 
-    .about-container h1, .about-container h2 {
-      color: #2b6cb0;
+    .list {
+      padding-left: 18px;
+      margin: 0 0 16px;
+    }
+    .cta {
+      display: block;
+      text-align: center;
+      margin-top: 24px;
       font-weight: 700;
     }
 
-    .about-container h1 {
-      text-align: center;
-      font-size: 2.4rem;
-      margin-bottom: 20px;
+    /* Footer */
+    footer {
+      max-width: var(--container-max);
+      margin: 0 auto 60px;
+      padding: 12px 16px;
+      color: #4a5568;
+      font-size: .95rem;
     }
 
-    .about-container h2 {
-      margin-top: 40px;
-      margin-bottom: 15px;
-      font-size: 1.6rem;
-    }
-
-    .about-container p {
-      margin-bottom: 18px;
-    }
-
-    @media (max-width: 600px) {
-      .topbar {
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 10px;
-      }
-
-      .topbar-spacer {
-        height: 100px;
-      }
-
-      .about-container {
-        margin: 0 10px 50px;
-        padding: 16px;
-      }
+    /* Optional fish svg styling */
+    .fish {
+      display: block;
+      margin: 24px auto 0;
+      width: 220px;
+      opacity: .9;
     }
   </style>
 </head>
 <body>
-  <div class="topbar">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Fixed Topbar -->
+  <div class="topbar" role="navigation" aria-label="Main navigation">
     <a href="index.html">Home</a>
     <a href="collections.html">Collections</a>
-    <a href="about.html">About</a>
+    <a href="about.html" aria-current="page">About</a>
     <a href="conditions.html">Conditions</a>
     <a href="knots.html">Knots</a>
     <a href="sponsor.html">Get Sponsored</a>
   </div>
 
-  <!-- Spacer pushes content below fixed topbar -->
-  <div class="topbar-spacer"></div>
+  <!-- Spacer to keep content below fixed topbar -->
+  <div class="topbar-spacer" aria-hidden="true"></div>
 
-  <div class="about-container" role="main">
+  <!-- Main Content -->
+  <main id="main" class="about-container" role="main">
     <h1>About Fish Rig Finder</h1>
     <p>
-      Fish Rig Finder is your go-to AI fishing assistant, providing custom fishing rig and bait suggestions based on your current tackle, water conditions, and target species. Whether you're freshwater fishing for bass, crappie, or panfish—or out on saltwater targeting redfish, snook, or striped bass—our intelligent tool helps you rig up the right way, every time.
+      Fish Rig Finder is your AI-powered fishing assistant. Tell us what gear you have—rod, reel, line, hook size, lure or bait—and the conditions you’re facing. We’ll recommend the best fishing rig and setup for your target species so you spend less time guessing and more time catching.
     </p>
 
     <h2>Smart Fishing Rig Recommendations Based on Real Variables</h2>
     <p>
-      Unlike generic fishing guides, Fish Rig Finder asks about the gear you actually use—rod type, reel strength, line, bait, hook size, and water conditions—and delivers precise, expert-backed rig suggestions. It's like having a professional fishing guide on your phone or computer.
+      Generic guides can be hit-or-miss. Fish Rig Finder adapts to your exact scenario: freshwater lakes and rivers, tidal creeks, inshore flats, surf, piers, and jetties. Whether you’re bottom fishing, float fishing, finesse jigging, or casting lures, our logic matches rigs, leaders, and terminal tackle to your equipment and water.
     </p>
-    <p>
-      Our AI uses advanced logic to recommend optimal tackle combinations for surfcasting, lake fishing, river fishing, pier fishing, kayak fishing, and more. Whether you're bottom fishing, float fishing, or casting lures, Fish Rig Finder optimizes your setup.
-    </p>
+    <ul class="list">
+      <li>Optimizes rigs for bass, crappie, panfish, trout, striped bass, redfish, snook, and more.</li>
+      <li>Considers water clarity, depth, current, structure, and forage to refine choices.</li>
+      <li>Explains why a rig works and how to tie it, so you learn while you fish.</li>
+    </ul>
 
     <h2>Why Anglers Trust Fish Rig Finder</h2>
     <p>
-      Built by a team of experienced anglers and developers, Fish Rig Finder was created to fill the gap left by vague tutorials and YouTube videos. Our mission is simple: help people catch more fish by improving rig accuracy and bait matching.
+      Built by anglers frustrated with vague advice, Fish Rig Finder focuses on clarity and accuracy. Our goal is to make rig selection simple, practical, and confidence-boosting—whether you’re a first-timer or a seasoned weekend warrior.
     </p>
-    <p>
-      Users report higher catch rates, less time guessing which rigs to use, and increased fishing confidence. Whether you're a beginner or a seasoned pro, our fishing rig recommender adapts to your needs.
-    </p>
+    <ul class="list">
+      <li>Clear, step-by-step rigging guidance that’s easy to follow on the water.</li>
+      <li>Gear-specific suggestions that respect the tackle you already own.</li>
+      <li>Continuously improved recommendations based on community feedback.</li>
+    </ul>
 
     <h2>Optimized for Bass, Crappie, Saltwater & More</h2>
     <p>
-      Fish Rig Finder works great for a wide range of species. Need the best rig for smallmouth bass in rocky rivers? Or a live bait setup for redfish in the flats? We've got you covered. The more you tell us about your conditions, the better your results.
+      From finesse dropshot rigs for pressured largemouth to Carolina rigs for smallmouth on rock, and from popping corks for redfish to fish-finder rigs for surf striped bass, Fish Rig Finder covers the staples and the situational setups you actually need.
     </p>
 
-    <h2>Join the FishRigFinder Community</h2>
-    <p>
-      Thousands of anglers already rely on Fish Rig Finder to improve their trips. Whether you fish for fun or food, solo or with family, our tool gives you the edge. It’s free to use and always improving.
-    </p>
+    <h2>How Fish Rig Finder Works</h2>
+    <ol class="list">
+      <li>Tell us your gear and the species you’re after.</li>
+      <li>Add environmental details like depth, cover, clarity, current, or tide.</li>
+      <li>Get a rig with hook/leader/weight suggestions and when to use it.</li>
+      <li>Follow quick rig-tying steps and pro tips to fish it right.</li>
+    </ol>
 
     <h2>Contact Us & Share Feedback</h2>
     <p>
-      Got a question or suggestion? We’d love to hear from you. Your input helps us build better fishing tools for the entire angling community. Email us or connect with us on social media.
+      We’re building this with the angling community. Have ideas, requests, or a fish story to share? Reach out and help us make Fish Rig Finder even better for everyone on the water.
     </p>
 
-    <p><strong>Fish smarter. Catch more. FishRigFinder.com</strong></p>
-  </div>
+    <p class="cta"><strong>Fish smarter. Catch more. FishRigFinder.com</strong></p>
+  </main>
 
-  <!-- Optional fish animation -->
+  <!-- Optional fish animation / logo -->
   <svg class="fish" viewBox="0 0 235 104" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-    <!-- SVG content goes here -->
+    <!-- Replace with your SVG paths -->
+    <path d="M10 50 C 40 10, 80 10, 120 50 C 80 90, 40 90, 10 50 Z" fill="#2b6cb0"/>
+    <circle cx="28" cy="50" r="4" fill="#ffffff"/>
   </svg>
+
+  <footer>
+    © <span id="year"></span> Fish Rig Finder — AI Fishing Rig & Tackle Recommendations
+  </footer>
+
+  <script>
+    // Keep footer year current
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
