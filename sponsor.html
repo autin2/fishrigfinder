@@ -3,93 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Get Sponsored - FishRigFinder</title>
-  <meta name="description" content="Apply to get sponsored by FishRigFinder. We partner with fishing creators and influencers to promote fishing gear and tools." />
-  <meta name="keywords" content="fishing sponsor, fishing influencer, get sponsored fishing, fishrigfinder partner, fishing ambassador" />
-  <meta name="author" content="FishRigFinder" />
+  <title>Get Sponsored – Fishing Influencer Program | Fish Rig Finder</title>
+  <meta name="description" content="Apply to the Fish Rig Finder Sponsorship Program. If you're a fishing YouTuber, TikToker, or content creator, we want to support you with gear, promotion, and more.">
+  <meta name="keywords" content="get sponsored fishing, fishing influencer, fishing sponsorship, fishing brand deal, fishing promo, youtube fishing sponsorship, content creator sponsorship, fishing program">
+  <meta name="author" content="FishRigFinder">
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
-      padding-top: 70px;
-    }
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Fishing Sponsorship Program - Fish Rig Finder",
+    "url": "https://fishrigfinder.com/sponsor.html",
+    "description": "Apply for a fishing sponsorship from Fish Rig Finder. We're looking for creators in the fishing space.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "FishRigFinder"
+    }
+  }
+  </script>
+
+  <style>
     .topbar {
-      width: 100%;
       background-color: #2b6cb0;
-      padding: 15px 0;
+      padding: 10px;
       text-align: center;
-      color: white;
-      font-size: 1.7rem;
-      font-weight: 600;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 10;
     }
 
     .topbar a {
       color: white;
-      margin: 0 15px;
       text-decoration: none;
-      font-size: 1rem;
+      margin: 0 15px;
+      font-weight: 600;
     }
 
     .topbar a:hover {
       text-decoration: underline;
     }
 
-    .container {
-      max-width: 600px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    .sponsor-container {
+      display: flex;
+      max-width: 1200px;
+      margin: 100px auto 50px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      font-size: 1rem;
+      color: #2d3748;
+      gap: 40px;
     }
 
-    h1 {
-      text-align: center;
+    .form-section {
+      flex: 2;
+    }
+
+    .sponsor-container h1 {
       color: #2b6cb0;
+      text-align: center;
       margin-bottom: 20px;
     }
 
-    p {
-      text-align: center;
-      font-size: 1.1rem;
-      margin-bottom: 30px;
+    form {
+      display: flex;
+      flex-direction: column;
     }
 
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
+    label {
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    input, textarea {
+      margin-top: 5px;
+      padding: 10px;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 1rem;
     }
 
-    form button {
-      width: 100%;
+    button {
+      margin-top: 20px;
       padding: 12px;
       background-color: #2b6cb0;
       color: white;
       border: none;
       border-radius: 6px;
-      font-weight: bold;
+      font-size: 1rem;
       cursor: pointer;
     }
 
-    form button:hover {
-      background-color: #1e4f80;
+    button:hover {
+      background-color: #1e4e8c;
+    }
+
+    aside {
+      flex: 1;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      font-size: 0.95rem;
+    }
+
+    aside h2 {
+      color: #2b6cb0;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    aside ul {
+      padding-left: 20px;
+    }
+
+    aside li {
+      margin-bottom: 8px;
     }
   </style>
 </head>
 <body>
+
   <div class="topbar">
     <a href="index.html">Home</a>
     <a href="collections.html">Collections</a>
@@ -99,17 +132,59 @@
     <a href="sponsor.html">Get Sponsored</a>
   </div>
 
-  <div class="container">
-    <h1>Get Sponsored</h1>
-    <p>Are you a fishing content creator or influencer? Apply to be sponsored by FishRigFinder and receive gear, promo codes, and support.</p>
+  <div class="sponsor-container">
+    <div class="form-section">
+      <h1>Join the Fish Rig Finder Sponsorship Program</h1>
+      <p>Are you a fishing YouTuber, TikTok creator, or social media angler? We’re looking to sponsor creators who are passionate about fishing and helping others learn. Apply below and let’s work together to grow your audience and our fishing community.</p>
 
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <input type="text" name="socials" placeholder="Your Social Media Links" required />
-      <textarea name="message" rows="5" placeholder="Tell us about your fishing content, audience, and why you want to partner with us." required></textarea>
-      <button type="submit">Apply Now</button>
-    </form>
+      <form action="https://formspree.io/f/mzzvvgkg" method="POST">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="platform">Platform(s) (e.g., YouTube, Instagram)</label>
+        <input type="text" id="platform" name="platform" required>
+
+        <label for="link">Social/Channel Link</label>
+        <input type="url" id="link" name="link" required>
+
+        <label for="message">Why should we sponsor you?</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Submit Application</button>
+      </form>
+    </div>
+
+    <aside>
+      <h2>Who We're Looking to Sponsor</h2>
+      <p>Fish Rig Finder supports anglers who:</p>
+      <ul>
+        <li>Post fishing content weekly</li>
+        <li>Have an engaged audience</li>
+        <li>Fish freshwater or saltwater</li>
+        <li>Share helpful tips, gear reviews, or catches</li>
+      </ul>
+
+      <h2>Benefits of Being Sponsored</h2>
+      <ul>
+        <li>Free gear and exclusive tackle drops</li>
+        <li>Shoutouts on our social media</li>
+        <li>Affiliate earnings and bonuses</li>
+        <li>Early access to new tools and features</li>
+      </ul>
+
+      <h2>Popular Searches</h2>
+      <ul>
+        <li>fishing brand sponsorship</li>
+        <li>how to get sponsored for fishing</li>
+        <li>fishing influencer deals</li>
+        <li>apply for fishing sponsorship</li>
+        <li>get sponsored for YouTube fishing</li>
+      </ul>
+    </aside>
   </div>
+
 </body>
 </html>
