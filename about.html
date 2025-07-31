@@ -25,13 +25,42 @@
 
   <link rel="stylesheet" href="style.css" />
   <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+    }
+
+    .topbar {
+      background-color: #2b6cb0;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+    }
+
+    .topbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .topbar a:hover {
+      text-decoration: underline;
+    }
+
     .about-container {
       max-width: 860px;
-      margin: 100px auto 50px;
+      margin: 100px auto 50px; /* 100px top margin to offset fixed navbar */
       padding: 20px;
       background-color: #f9f9f9;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
       line-height: 1.7;
       font-size: 1.05rem;
       color: #2d3748;
@@ -58,71 +87,73 @@
       margin-bottom: 18px;
     }
 
-    .topbar a {
-      color: white;
-      text-decoration: none;
-      margin-left: 12px;
-      font-weight: 600;
-    }
+    @media (max-width: 600px) {
+      .topbar {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+      }
 
-    .topbar a:hover {
-      text-decoration: underline;
+      .about-container {
+        margin: 120px 10px 50px;
+        padding: 16px;
+      }
     }
   </style>
 </head>
 <body>
-<div class="topbar">
-  <a href="index.html">Home</a>
-  <a href="collections.html">Collections</a>
-  <a href="about.html">About</a>
-  <a href="conditions.html">Conditions</a>
-  <a href="knots.html">Knots</a>
-  <a href="sponsor.html">Get Sponsored</a>
-</div>
+  <div class="topbar">
+    <a href="index.html">Home</a>
+    <a href="collections.html">Collections</a>
+    <a href="about.html">About</a>
+    <a href="conditions.html">Conditions</a>
+    <a href="knots.html">Knots</a>
+    <a href="sponsor.html">Get Sponsored</a>
+  </div>
 
-<div class="about-container" role="main">
-  <h1>About Fish Rig Finder</h1>
-  <p>
-    Fish Rig Finder is your go-to AI fishing assistant, providing custom fishing rig and bait suggestions based on your current tackle, water conditions, and target species. Whether you're freshwater fishing for bass, crappie, or panfish—or out on saltwater targeting redfish, snook, or striped bass—our intelligent tool helps you rig up the right way, every time.
-  </p>
+  <div class="about-container" role="main">
+    <h1>About Fish Rig Finder</h1>
+    <p>
+      Fish Rig Finder is your go-to AI fishing assistant, providing custom fishing rig and bait suggestions based on your current tackle, water conditions, and target species. Whether you're freshwater fishing for bass, crappie, or panfish—or out on saltwater targeting redfish, snook, or striped bass—our intelligent tool helps you rig up the right way, every time.
+    </p>
 
-  <h2>Smart Fishing Rig Recommendations Based on Real Variables</h2>
-  <p>
-    Unlike generic fishing guides, Fish Rig Finder asks about the gear you actually use—rod type, reel strength, line, bait, hook size, and water conditions—and delivers precise, expert-backed rig suggestions. It's like having a professional fishing guide on your phone or computer.
-  </p>
-  <p>
-    Our AI uses advanced logic to recommend optimal tackle combinations for surfcasting, lake fishing, river fishing, pier fishing, kayak fishing, and more. Whether you're bottom fishing, float fishing, or casting lures, Fish Rig Finder optimizes your setup.
-  </p>
+    <h2>Smart Fishing Rig Recommendations Based on Real Variables</h2>
+    <p>
+      Unlike generic fishing guides, Fish Rig Finder asks about the gear you actually use—rod type, reel strength, line, bait, hook size, and water conditions—and delivers precise, expert-backed rig suggestions. It's like having a professional fishing guide on your phone or computer.
+    </p>
+    <p>
+      Our AI uses advanced logic to recommend optimal tackle combinations for surfcasting, lake fishing, river fishing, pier fishing, kayak fishing, and more. Whether you're bottom fishing, float fishing, or casting lures, Fish Rig Finder optimizes your setup.
+    </p>
 
-  <h2>Why Anglers Trust Fish Rig Finder</h2>
-  <p>
-    Built by a team of experienced anglers and developers, Fish Rig Finder was created to fill the gap left by vague tutorials and YouTube videos. Our mission is simple: help people catch more fish by improving rig accuracy and bait matching.
-  </p>
-  <p>
-    Users report higher catch rates, less time guessing which rigs to use, and increased fishing confidence. Whether you're a beginner or a seasoned pro, our fishing rig recommender adapts to your needs.
-  </p>
+    <h2>Why Anglers Trust Fish Rig Finder</h2>
+    <p>
+      Built by a team of experienced anglers and developers, Fish Rig Finder was created to fill the gap left by vague tutorials and YouTube videos. Our mission is simple: help people catch more fish by improving rig accuracy and bait matching.
+    </p>
+    <p>
+      Users report higher catch rates, less time guessing which rigs to use, and increased fishing confidence. Whether you're a beginner or a seasoned pro, our fishing rig recommender adapts to your needs.
+    </p>
 
-  <h2>Optimized for Bass, Crappie, Saltwater & More</h2>
-  <p>
-    Fish Rig Finder works great for a wide range of species. Need the best rig for smallmouth bass in rocky rivers? Or a live bait setup for redfish in the flats? We've got you covered. The more you tell us about your conditions, the better your results.
-  </p>
+    <h2>Optimized for Bass, Crappie, Saltwater & More</h2>
+    <p>
+      Fish Rig Finder works great for a wide range of species. Need the best rig for smallmouth bass in rocky rivers? Or a live bait setup for redfish in the flats? We've got you covered. The more you tell us about your conditions, the better your results.
+    </p>
 
-  <h2>Join the FishRigFinder Community</h2>
-  <p>
-    Thousands of anglers already rely on Fish Rig Finder to improve their trips. Whether you fish for fun or food, solo or with family, our tool gives you the edge. It’s free to use and always improving.
-  </p>
+    <h2>Join the FishRigFinder Community</h2>
+    <p>
+      Thousands of anglers already rely on Fish Rig Finder to improve their trips. Whether you fish for fun or food, solo or with family, our tool gives you the edge. It’s free to use and always improving.
+    </p>
 
-  <h2>Contact Us & Share Feedback</h2>
-  <p>
-    Got a question or suggestion? We’d love to hear from you. Your input helps us build better fishing tools for the entire angling community. Email us or connect with us on social media.
-  </p>
+    <h2>Contact Us & Share Feedback</h2>
+    <p>
+      Got a question or suggestion? We’d love to hear from you. Your input helps us build better fishing tools for the entire angling community. Email us or connect with us on social media.
+    </p>
 
-  <p><strong>Fish smarter. Catch more. FishRigFinder.com</strong></p>
-</div>
+    <p><strong>Fish smarter. Catch more. FishRigFinder.com</strong></p>
+  </div>
 
-<!-- Optional fish animation -->
-<svg class="fish" viewBox="0 0 235 104" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-  <!-- SVG content goes here -->
-</svg>
+  <!-- Optional fish animation -->
+  <svg class="fish" viewBox="0 0 235 104" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <!-- SVG content goes here -->
+  </svg>
 </body>
 </html>
